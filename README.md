@@ -1,4 +1,4 @@
-### A demo project of full-stack development by using leptos, trunk and tailwindcss
+A demo project of full-stack development by using leptos, trunk and tailwindcss
 
 #### Setup environment
 - add wasm toolchain: `rustup target add wasm32-unknown-unknown`
@@ -8,5 +8,5 @@
 #### Start web serve
 - trunk serve
 
-#### Release
+#### Build release
 - trunk build --release
