@@ -15,7 +15,8 @@ jobs:
       - run: sudo apt update
 
       - run: echo "start install build tools"
-      - run: sudo apt install rustup cargo
+      - run: sudo apt install cargo
+      - run: curl https://sh.rustup.rs -sSf | sh
       - run: rustup target add wasm32-unknown-unknown
       - run: cargo install trunk wasm-bindgen-cli
       - run: sudo npm install -g tailwindcss
