@@ -5,3 +5,6 @@ run:
 
 build:
 	trunk build --release
+
+cargo-build:
+	cargo build
