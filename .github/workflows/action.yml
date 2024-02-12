@@ -13,18 +13,16 @@ jobs:
       - run: echo "The ${{ github.workspace }} is now ready to test your code on the runner."
       - run: ls ${{ github.workspace }}
       - run: sudo apt update
-      - run: sudo apt install libfreetype6-dev libexpat1-dev libxcb-composite0-dev libasound2-dev
 
-      - run: echo "start install Rust..."
-      - name: Install Rust
-        uses: actions-rs/toolchain@v1
-      - run: echo "end install Rust..."
+      - run: echo "start install build tools"
+      - run: sudo apt install rustup cargo
+      - run: rustup target add wasm32-unknown-unknown
+      - run: cargo install trunk wasm-bindgen-cli
+      - run: sudo npm install -g tailwindcss
+      - run: echo "end install build tools..."
 
       - run: echo "start build..."
-      - name: Install Cargo
-        uses: actions-rs/cargo@v1
-        with:
-          command: build
+      - run: cargo build --release
       - run: make build
       - run: echo "end build..."
       - run: echo "🍏 This job's status is ${{ job.status }}."
