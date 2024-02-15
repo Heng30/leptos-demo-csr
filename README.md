@@ -13,3 +13,4 @@ An client-side rendering web demo project by using leptos, trunk and tailwindcss
 
 #### Reference
 - [tailwindcss.com](https://tailwindcss.com)
+- [book.leptos.dev](https://book.leptos.dev)
